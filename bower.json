@@ -1,0 +1,24 @@
+{
+	"name": "angular-basic-app-service",
+	"version": "0.1.0",
+	"homepage": "https://github.com/sullinger/angular-basic-app-service",
+	"authors": [
+		"Stefan Ullinger <stefan@slicemenice.de>"
+	],
+	"description": "Basic app service you can extend, that contains code to handle common events like resize, orientationchange, onscroll and much more.",
+	"keywords": [
+		"AngularJS"
+	],
+	"license": "ISC",
+	"main": [
+		"sources/**/*.module.js",
+		"sources/**/*"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
