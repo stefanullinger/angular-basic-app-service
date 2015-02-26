@@ -26,11 +26,15 @@ describe( 'Service: BasicAppService', function () {
 		// given
 		spyOn( mockRootScope, '$broadcast' );
 
+		var orientationChangeEvent = document.createEvent( 'CustomEvent' ); // MUST be 'CustomEvent'
+		orientationChangeEvent.initCustomEvent( 'orientationchange', false, false, null );
+
 		mockWindow.innerHeight = 500;
 		mockWindow.innerWidth = 1000;
 
 		// make sure we are in landscape first
-		mockWindow.dispatchEvent( new Event( 'orientationchange' ) );
+
+		mockWindow.dispatchEvent( orientationChangeEvent );
 
 		// then prepare to change to portrait
 		mockRootScope.$broadcast.calls.reset();
@@ -39,7 +43,7 @@ describe( 'Service: BasicAppService', function () {
 
 
 		//when
-		mockWindow.dispatchEvent( new Event( 'orientationchange' ) );
+		mockWindow.dispatchEvent( orientationChangeEvent );
 
 		//then
 		expect( mockRootScope.$broadcast.calls.allArgs() ).toContain( [ BasicAppEvent.APP_ORIENTATION_CHANGED, 'appOrientation_portrait' ] );
@@ -51,8 +55,11 @@ describe( 'Service: BasicAppService', function () {
 		// given
 		spyOn( mockRootScope, '$broadcast' );
 
+		var resizeEvent = document.createEvent( 'CustomEvent' ); // MUST be 'CustomEvent'
+		resizeEvent.initCustomEvent( 'resize', false, false, null );
+
 		//when
-		mockWindow.dispatchEvent( new Event( 'resize' ) );
+		mockWindow.dispatchEvent( resizeEvent );
 
 		//then
 		expect( mockRootScope.$broadcast.calls.allArgs() ).toContain( [ BasicAppEvent.APP_SIZE_CHANGED, jasmine.any( Object ) ] );
@@ -64,8 +71,11 @@ describe( 'Service: BasicAppService', function () {
 		// given
 		spyOn( mockRootScope, '$broadcast' );
 
+		var scrollEvent = document.createEvent( 'CustomEvent' ); // MUST be 'CustomEvent'
+		scrollEvent.initCustomEvent( 'scroll', false, false, null );
+
 		//when
-		mockWindow.dispatchEvent( new Event( 'scroll' ) );
+		mockWindow.dispatchEvent( scrollEvent );
 		mockInterval.flush( 100 );
 
 		//then
