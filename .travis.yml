@@ -6,4 +6,7 @@ before_script:
   - npm install -g karma-cli
 
 script:
-  - karma start karma.conf.js --no-auto-watch --single-run --reporters=[dots,coverage] --browsers=PhantomJS && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - karma start karma.conf.js --no-auto-watch --single-run --reporters=[dots,coverage] --browsers=PhantomJS
+
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
