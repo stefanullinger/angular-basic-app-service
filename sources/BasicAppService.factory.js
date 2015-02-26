@@ -65,7 +65,7 @@
 		}
 
 		function getScrollOffset() {
-			return {}
+			return service.scrollOffset;
 		}
 
 		function getScrollPosition() {
