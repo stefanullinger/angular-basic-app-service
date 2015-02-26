@@ -30,7 +30,8 @@ describe( 'Service: BasicAppService', function () {
 		mockWindow.innerWidth = 1000;
 
 		// make sure we are in landscape first
-		mockWindow.dispatchEvent( new Event( 'resize' ) );
+		mockWindow.dispatchEvent( new Event( 'orientationchange' ) );
+		mockRootScope.$digest();
 
 		// then prepare to change to portrait
 		mockWindow.innerHeight = 1000;
