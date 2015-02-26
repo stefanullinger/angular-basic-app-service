@@ -1,31 +1,34 @@
 {
-  "name": "angular-basic-app-service",
-  "version": "0.1.0",
-  "description": "Basic app service you can extend, that contains code to handle common events like resize, orientationchange, onscroll and much more.",
-  "devDependencies": {
-    "jasmine-core": "^2.2.0",
-    "karma": "^0.12.31",
-    "karma-chrome-launcher": "^0.1.7",
-    "karma-firefox-launcher": "^0.1.4",
-    "karma-jasmine": "^0.3.5"
-  },
-  "scripts": {
-    "postinstall": "bower install",
-    "pretest": "npm install",
-    "test": "karma start karma.conf.js",
-    "test-single-run": "karma start karma.conf.js  --single-run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sullinger/angular-basic-app-service.git"
-  },
-  "keywords": [
-    "AngularJS"
-  ],
-  "author": "Stefan Ullinger <stefan@slicemenice.de>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sullinger/angular-basic-app-service/issues"
-  },
-  "homepage": "https://github.com/sullinger/angular-basic-app-service"
+	"name": "angular-basic-app-service",
+	"version": "0.1.0",
+	"description": "Basic app service you can extend, that contains code to handle common events like resize, orientationchange, onscroll and much more.",
+	"devDependencies": {
+		"jasmine-core": "^2.2.0",
+		"karma": "^0.12.31",
+		"karma-chrome-launcher": "^0.1.7",
+		"karma-firefox-launcher": "^0.1.4",
+		"karma-jasmine": "^0.3.5"
+	},
+	"scripts": {
+		"postinstall": "bower install",
+		"pretest": "npm install",
+		"test": "karma start karma.conf.js",
+		"test-single-run": "karma start karma.conf.js  --single-run"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sullinger/angular-basic-app-service.git"
+	},
+	"keywords": [
+		"AngularJS"
+	],
+	"author": "Stefan Ullinger <stefan@slicemenice.de>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/sullinger/angular-basic-app-service/issues"
+	},
+	"homepage": "https://github.com/sullinger/angular-basic-app-service",
+	"dependencies": {
+		"bower": "^1.3.12"
+	}
 }
