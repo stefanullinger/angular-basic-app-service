@@ -1,9 +1,9 @@
-module.exports = function(config){
-	config.set({
+module.exports = function ( config ) {
+	config.set( {
 
-		basePath : './',
+		basePath: './',
 
-		files : [
+		files: [
 			'bower_components/angular/angular.js',
 			'bower_components/angular-mocks/angular-mocks.js',
 			'sources/**/*.module.js',
@@ -11,18 +11,31 @@ module.exports = function(config){
 			'tests/unit/**/*.js'
 		],
 
-		autoWatch : true,
+		autoWatch: true,
 
-		frameworks: ['jasmine'],
+		frameworks: [ 'jasmine' ],
 
-		browsers : ['Chrome'],
+		browsers: [ 'Chrome' ],
 
-		plugins : [
+		plugins: [
 			'karma-chrome-launcher',
+			'karma-coverage',
 			'karma-firefox-launcher',
 			'karma-jasmine',
 			'karma-phantomjs-launcher'
-		]
+		],
 
-	});
+		reporters: [ 'progress', 'coverage' ],
+
+		preprocessors: {
+			'sources/**/*.js': [ 'coverage' ]
+		},
+
+		coverageReporter: {
+			type:   'lcovonly',
+			dir:    'coverage/',
+			subdir: '.'
+		}
+
+	} );
 };
