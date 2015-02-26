@@ -31,9 +31,9 @@ describe( 'Service: BasicAppService', function () {
 
 		// make sure we are in landscape first
 		mockWindow.dispatchEvent( new Event( 'orientationchange' ) );
-		mockRootScope.$digest();
 
 		// then prepare to change to portrait
+		mockRootScope.$broadcast.calls.reset();
 		mockWindow.innerHeight = 1000;
 		mockWindow.innerWidth = 500;
 
@@ -42,7 +42,7 @@ describe( 'Service: BasicAppService', function () {
 		mockWindow.dispatchEvent( new Event( 'orientationchange' ) );
 
 		//then
-		expect( mockRootScope.$broadcast ).toHaveBeenCalledWith( BasicAppEvent.APP_ORIENTATION_CHANGED, jasmine.any( String ) );
+		expect( mockRootScope.$broadcast.calls.allArgs() ).toContain( [ BasicAppEvent.APP_ORIENTATION_CHANGED, 'appOrientation_portrait' ] );
 
 	} );
 
@@ -55,7 +55,7 @@ describe( 'Service: BasicAppService', function () {
 		mockWindow.dispatchEvent( new Event( 'resize' ) );
 
 		//then
-		expect( mockRootScope.$broadcast ).toHaveBeenCalledWith( BasicAppEvent.APP_SIZE_CHANGED, jasmine.any( Object ) );
+		expect( mockRootScope.$broadcast.calls.allArgs() ).toContain( [ BasicAppEvent.APP_SIZE_CHANGED, jasmine.any( Object ) ] );
 
 	} );
 
