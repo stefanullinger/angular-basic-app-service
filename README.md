@@ -25,7 +25,7 @@ Reference the module in your app.
 })();
 ```
 
-Create your AppService extending the BasicAppService
+Create your AppService by extending the BasicAppService
 
 ```javascript
 (function() {
