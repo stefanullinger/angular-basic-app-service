@@ -4,9 +4,9 @@
 		.module( 'angular.basicAppService' )
 		.factory( 'BasicAppService', serviceDefinition );
 
-	serviceDefinition.$inject = [ '$interval', '$rootScope', '$window', 'AppOrientation', 'BasicAppEvent' ];
+	serviceDefinition.$inject = [ '$document', '$interval', '$rootScope', '$window', 'AppOrientation', 'BasicAppEvent' ];
 
-	function serviceDefinition( $interval, $rootScope, $window, AppOrientation, BasicAppEvent ) {
+	function serviceDefinition( $document, $interval, $rootScope, $window, AppOrientation, BasicAppEvent ) {
 		// ********
 		// Private
 		// ********
@@ -19,8 +19,8 @@
 		};
 		service.fixedElementSelectors = [];
 		service.scrollPosition = {
-			left: document.body.scrollLeft,
-			top:  document.body.scrollTop
+			left: $document[0].body.scrollLeft,
+			top:  $document[0].body.scrollTop
 		};
 		service.scrollOffset = {
 			left: 0,
@@ -95,8 +95,8 @@
 			$interval( function () {
 				if ( service.didScroll ) {
 					service.scrollPosition = {
-						left: document.body.scrollLeft + service.scrollOffset.left,
-						top:  document.body.scrollTop + service.scrollOffset.top
+						left: $document[0].body.scrollLeft + service.scrollOffset.left,
+						top:  $document[0].body.scrollTop + service.scrollOffset.top
 					};
 
 					$rootScope.$broadcast( BasicAppEvent.APP_SCROLL_POSITION_CHANGED, service.scrollPosition );
