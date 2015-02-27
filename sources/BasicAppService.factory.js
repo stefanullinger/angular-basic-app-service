@@ -18,7 +18,10 @@
 			width:  $window.innerWidth
 		};
 		service.fixedElementSelectors = [];
-		service.scrollPosition = null;
+		service.scrollPosition = {
+			left: document.body.scrollLeft,
+			top:  document.body.scrollTop
+		};
 		service.scrollOffset = {
 			left: 0,
 			top:  0
@@ -32,8 +35,8 @@
 			getAppOrientation: getAppOrientation,
 			getAppSize:        getAppSize,
 			getScrollPosition: getScrollPosition,
-			setScrollOffset:   setScrollOffset,
-			getScrollOffset:   getScrollOffset
+			getScrollOffset:   getScrollOffset,
+			setScrollOffset:   setScrollOffset
 		};
 
 
