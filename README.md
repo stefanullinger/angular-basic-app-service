@@ -1,4 +1,5 @@
-[![Bower version](https://badge.fury.io/bo/angular-basic-app-service.svg)](http://badge.fury.io/bo/angular-basic-app-service) [![Build Status](https://travis-ci.org/sullinger/angular-basic-app-service.svg?branch=master)](https://travis-ci.org/sullinger/angular-basic-app-service) [![Coverage Status](https://coveralls.io/repos/sullinger/angular-basic-app-service/badge.svg?branch=master)](https://coveralls.io/r/sullinger/angular-basic-app-service?branch=master)
+[![Bower version](https://badge.fury.io/bo/angular-basic-app-service.svg)](http://badge.fury.io/bo/angular-basic-app-service) [![Build Status](https://travis-ci.org/sullinger/angular-basic-app-service.svg?branch=master)](https://travis-ci.org/sullinger/angular-basic-app-service) [![Coverage Status](https://coveralls.io/repos/sullinger/angular-basic-app-service/badge.svg?branch=master)](https://coveralls.io/r/sullinger/angular-basic-app-service?branch=master)  
+[![Hire SliceMeNice](https://img.shields.io/badge/Need%20Support%3F-Hire%20SliceMeNice-red.svg)](http://www.slicemenice.de)
 # angular-basic-app-service
 
 Basic app service you can extend, that contains code to handle common events like resize, orientationchange, onscroll and much more.
